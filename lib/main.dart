@@ -12,9 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Spotify',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black54),
-        useMaterial3: true,
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.black54),
+        // useMaterial3: true,
+        // scaffoldBackgroundColor: Colors.black87,
+        brightness: Brightness.dark
       ),
       home: const MyHomePage(title: 'Spotify'),
     );
@@ -36,10 +39,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-       
-        title: Text(widget.title),
+      appBar: AppBar( 
+        title: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {
+                    print("Clique sur le Spotify");
+                  },
+                  child: const Text(
+                    "SPOTIFY",
+                    style: TextStyle(
+                      fontFamily: "Schyler",
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       body: const Center(
 
