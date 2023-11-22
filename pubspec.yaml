@@ -75,7 +75,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Schyler
+    - family: BoldFont
       fonts:
         - asset: fonts/bold_font.ttf
   #         style: italic
