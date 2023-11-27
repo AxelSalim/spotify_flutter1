@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'Widget_InkWell.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,12 +34,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Color colorIA = Colors.white60;
-  Color colorTA = Colors.white60;
-  Color colorIR = Colors.white60;
-  Color colorTR = Colors.white60;
-  Color colorII = Colors.white60;
-  Color colorIL = Colors.white60;
+
   Color colorIB = Colors.white60;
   Color colorTB = Colors.white60;
   Color colorIP = Colors.white60;
@@ -81,70 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 children: [
                   //  ACCEUIL
-                  InkWell(
-                    onTap: () {
-                      print("Page d'Acceuil");
-                    },
-                    onHover: (bool hover) {
-                      setState(() {
-                        colorIA = hover ? Colors.white : Colors.white60;
-                        colorTA = hover ? Colors.white : Colors.white60; 
-                      });
-                    },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.home_filled, 
-                          color: colorIA,
-                        ),
-
-                        const SizedBox(width: 5.0),
-                        
-                        Text(
-                          "Acceuil",
-                          style: TextStyle(
-                            fontSize: 19.0,
-                            color: colorTA,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
+                  Navig1ClassWidget(page: "1", colorIcon: Colors.white60, colorTexte: Colors.white60, colorBase: Colors.white, nameIcone: "home_filled", textePage: "Acceuil",),
+                  
                   const SizedBox(width: 30.0),
 
                   // RECHERCHE
-                  InkWell(
-                    onTap: () {
-                      print("Page de Recherche");
-                    },
-                    onHover: (bool hover) {
-                      setState(() {
-                        colorIR = hover ? Colors.white : Colors.white60;
-                        colorTR = hover ? Colors.white : Colors.white60; 
-                      });
-                    },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.search_rounded, 
-                          color: colorIR,
-                        ),
-
-                        const SizedBox(width: 5.0),
-                        
-                        Text(
-                          "Recherche",
-                          style: TextStyle(
-                            fontSize: 19.0,
-                            color: colorTR,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  Navig1ClassWidget(page: "2", colorIcon: Colors.white60, colorTexte: Colors.white60, colorBase: Colors.white, nameIcone: "search_rounded", textePage: "Recherche",),
                 ],
               ),
             ),
@@ -154,48 +92,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 children: [
                   // INSCRIPTION
-                  InkWell(
-                    onTap: () {
-                      print("Page d'Inscription");
-                    },
-                    onHover: (bool hover) {
-                      setState(() {
-                        colorII = hover ? Colors.white : Colors.white60;
-                      });
-                    },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.power_settings_new_outlined, 
-                          color: colorII,
-                        ),                  
-                      ],
-                    ),
-                  ),
+                  Navig2ClassWidget(page: "3", colorIcon: Colors.white60, colorBase: Colors.white, nameIcone: "power_settings_new_outlined"),
 
                   const SizedBox(width: 10.0),
 
                   // CONNEXION
-                  InkWell(
-                    onTap: () {
-                      print("Page de Connexion");
-                    },
-                    onHover: (bool hover) {
-                      setState(() {
-                        colorIL = hover ? Colors.white : Colors.white60;
-                      });
-                    },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.login, 
-                          color: colorIL,
-                        ),                  
-                      ],
-                    ),
-                  ),
+                  Navig2ClassWidget(page: "4", colorIcon: Colors.white60, colorBase: Colors.white, nameIcone: "login"),
                 ],
               ),
             ),
