@@ -281,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                             RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(10.0), 
+                                              borderRadius: BorderRadius.circular(8.0), 
                                             ),
                                           ),
                                         ),
@@ -367,7 +367,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                             RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(10.0), 
+                                              borderRadius: BorderRadius.circular(8.0), 
                                             ),
                                           ),
                                         ),
@@ -391,26 +391,26 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Column(
                       children: [
-                        Row(
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                print("Page des coockies");
-                              },
-                              child: const Text(
-                                'Cookies',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  decoration: TextDecoration.underline,
-                                ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          margin: const EdgeInsets.only(left: 15.0, top: 5.0, right: 15.0, bottom: 10.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              print("Page des coockies");
+                            },
+                            child: const Text(
+                              'Cookies',
+                              style: TextStyle(
+                                color: Colors.white,
+                                decoration: TextDecoration.underline,
                               ),
                             ),
-                          ],
+                          ),
                         ),
                         Row(
                           children: [
                             Container(
-                              // margin: const EdgeInsets.only(left: 15.0, top: 5.0, right: 15.0, bottom: 10.0),
+                              margin: const EdgeInsets.only(left: 15.0, top: 5.0, right: 15.0, bottom: 10.0),
                               child: MouseRegion(
                                 onEnter: (_) {
                                   setState(() {
@@ -427,7 +427,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   scale: isHovered3 ? 1.05 : 1.0,
                                   child: ElevatedButton(
                                     onPressed: () {
-                                      print("Parcourir les Podcasts");
+                                      print("Français");
                                     }, 
                                     style: ButtonStyle(
                                       backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
@@ -466,6 +466,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             flex: 5,
             child: Container(
+              alignment: Alignment.topLeft,
               margin: const EdgeInsets.only(left: 0.0, top: 10.0, right: 10.0, bottom: 10.0),
               decoration: BoxDecoration(
                 border: Border.all(
@@ -474,6 +475,78 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 color: Colors.black38,
                 borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Column(
+                children: [
+                  // Expanded(
+                    // flex: 1,
+                    // child: Container(
+                    //   child: Row(
+                    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //     children: [
+                    //         Row(
+                    //           children: [
+                    //             MouseRegion(
+                    //               onEnter: (_) {
+                    //                 setState(() {
+                    //                   isHovered = true;
+                    //                   colorIB = Colors.white;
+                    //                   colorTB = Colors.white;
+                    //                 });
+                    //               },
+                    //               onExit: (_) {
+                    //                 setState(() {
+                    //                   isHovered = false;
+                    //                   colorIB = Colors.white60;
+                    //                   colorTB = Colors.white60;
+                    //                 });
+                    //               },                   
+                    //               cursor: SystemMouseCursors.click,
+                    //               child: Tooltip(
+                    //                 message: "Reculer",
+                    //                 padding: const EdgeInsets.all(5.0),
+                    //                 decoration: BoxDecoration(
+                    //                   color: Colors.black,
+                    //                   borderRadius: BorderRadius.circular(5.0),
+                    //                 ),
+                    //                 textStyle: const TextStyle(
+                    //                   color: Colors.white,
+                    //                   fontSize: 14.0,
+                    //                 ),
+                    //                 preferBelow: true, 
+                    //                 verticalOffset: 20,
+                    //                 child: Row(
+                    //                   children: [
+                    //                     Icon(
+                    //                       Icons.arrow_back_ios_rounded,
+                    //                       color: colorIB,
+                    //                     ),
+                    //                   ],
+                    //                 ),
+                    //               ),
+                    //             ),
+                    //             const SizedBox(width: 20),
+                    //           ],
+                    //         ),
+                    //         Container(),
+                    //     ],
+                    //   ),
+                    // ),
+                  // ),
+                  Expanded(
+                    flex: 14,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.center,
+                          colors: [Colors.white24, Colors.white10],
+                        ),
+                      ),
+                      child: Row(),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

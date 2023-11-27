@@ -45,7 +45,7 @@ class Navig1ClassWidget extends StatefulWidget {
 }
 
 class _Navig1ClassWidgetState extends State<Navig1ClassWidget> {
-  bool hover = false;
+  bool isHovered = false;
   
   @override
   Widget build(BuildContext context) {
@@ -55,8 +55,7 @@ class _Navig1ClassWidgetState extends State<Navig1ClassWidget> {
     },
     onHover: (hover) {
       setState(() {
-        widget.colorIcon = hover ? widget.colorBase : widget.colorIcon;
-        widget.colorTexte = hover ? widget.colorBase : widget.colorTexte;
+        isHovered = hover;
       });
     },
     child: Row(
@@ -64,7 +63,7 @@ class _Navig1ClassWidgetState extends State<Navig1ClassWidget> {
       children: [
         Icon(
           getIconData(widget.nameIcone), 
-          color: widget.colorIcon,
+          color: isHovered ? widget.colorBase : widget.colorIcon,
         ),
 
         const SizedBox(width: 5.0),
@@ -73,7 +72,7 @@ class _Navig1ClassWidgetState extends State<Navig1ClassWidget> {
           widget.textePage,
           style: TextStyle(
             fontSize: 19.0, 
-            color: widget.colorTexte,
+            color: isHovered ? widget.colorBase : widget.colorTexte,
           ),
         ),
       ],
@@ -117,7 +116,7 @@ class Navig2ClassWidget extends StatefulWidget {
 }
 
 class _Navig2ClassWidgetState extends State<Navig2ClassWidget> {
-  bool hover = false;
+  bool isHovered = false;
   
   @override
   Widget build(BuildContext context) {
@@ -127,7 +126,7 @@ class _Navig2ClassWidgetState extends State<Navig2ClassWidget> {
     },
     onHover: (hover) {
       setState(() {
-        widget.colorIcon = hover ? widget.colorBase : widget.colorIcon;
+        isHovered = hover;
       });
     },
     child: Row(
@@ -135,7 +134,7 @@ class _Navig2ClassWidgetState extends State<Navig2ClassWidget> {
       children: [
         Icon(
           getIconData(widget.nameIcone), 
-          color: widget.colorIcon,
+          color: isHovered ? widget.colorBase : widget.colorIcon,
         ),
       ],
     ),
