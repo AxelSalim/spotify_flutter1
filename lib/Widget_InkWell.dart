@@ -19,7 +19,13 @@ Widget buildNavig1(Color colorIcon, Color colorTexte, Color colorBase, Color col
         Icon(
           getIconData(nameIcone), 
           color: colorIcon,
-        )
+        ),
+
+        const SizedBox(width: 5.0),
+
+        Text(
+          
+        ),
       ],
     ),
   );
@@ -68,13 +74,13 @@ IconData getIconData(String iconName) {
 
 String getNumberPage(Int number) {
   switch (number) {
-    case "1":
+    case 1:
       return 'Acceuil Page';
-    case "2":
+    case 2:
       return 'Recherche Page';
-    case "3":
+    case 3:
       return 'Inscription Page';
-    case "4":
+    case 4:
       return 'Connexion Page';
     default:
       return 'Error Page';
