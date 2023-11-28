@@ -38,6 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Color colorIB = Colors.white60;
   Color colorTB = Colors.white60;
   Color colorIP = Colors.white60;
+  Color colorIR = Colors.white60;
+  Color colorIN = Colors.white60;
 
   bool isHovered = false;
   bool isHovered1 = false;
@@ -478,61 +480,129 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               child: Column(
                 children: [
-                  // Expanded(
-                    // flex: 1,
-                    // child: Container(
-                    //   child: Row(
-                    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //     children: [
-                    //         Row(
-                    //           children: [
-                    //             MouseRegion(
-                    //               onEnter: (_) {
-                    //                 setState(() {
-                    //                   isHovered = true;
-                    //                   colorIB = Colors.white;
-                    //                   colorTB = Colors.white;
-                    //                 });
-                    //               },
-                    //               onExit: (_) {
-                    //                 setState(() {
-                    //                   isHovered = false;
-                    //                   colorIB = Colors.white60;
-                    //                   colorTB = Colors.white60;
-                    //                 });
-                    //               },                   
-                    //               cursor: SystemMouseCursors.click,
-                    //               child: Tooltip(
-                    //                 message: "Reculer",
-                    //                 padding: const EdgeInsets.all(5.0),
-                    //                 decoration: BoxDecoration(
-                    //                   color: Colors.black,
-                    //                   borderRadius: BorderRadius.circular(5.0),
-                    //                 ),
-                    //                 textStyle: const TextStyle(
-                    //                   color: Colors.white,
-                    //                   fontSize: 14.0,
-                    //                 ),
-                    //                 preferBelow: true, 
-                    //                 verticalOffset: 20,
-                    //                 child: Row(
-                    //                   children: [
-                    //                     Icon(
-                    //                       Icons.arrow_back_ios_rounded,
-                    //                       color: colorIB,
-                    //                     ),
-                    //                   ],
-                    //                 ),
-                    //               ),
-                    //             ),
-                    //             const SizedBox(width: 20),
-                    //           ],
-                    //         ),
-                    //         Container(),
-                    //     ],
-                    //   ),
-                    // ),
-                  // ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                            Row(
+                              children: [
+                                MouseRegion(
+                                  onEnter: (_) {
+                                    setState(() {
+                                      isHovered = true;
+                                      colorIR = Colors.white;
+                                    });
+                                  },
+                                  onExit: (_) {
+                                    setState(() {
+                                      isHovered = false;
+                                      colorIR = Colors.white60;
+                                    });
+                                  },                   
+                                  cursor: SystemMouseCursors.click,
+                                  child: Tooltip(
+                                    message: "Reculer",
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    textStyle: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14.0,
+                                    ),
+                                    preferBelow: true, 
+                                    verticalOffset: 20,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.arrow_back_ios_rounded,
+                                          color: colorIR,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+
+                                const SizedBox(width: 5.0),
+
+                                MouseRegion(
+                                  onEnter: (_) {
+                                    setState(() {
+                                      isHovered = true;
+                                      colorIN = Colors.white;
+                                    });
+                                  },
+                                  onExit: (_) {
+                                    setState(() {
+                                      isHovered = false;
+                                      colorIN = Colors.white60;
+                                    });
+                                  },                   
+                                  cursor: SystemMouseCursors.click,
+                                  child: Tooltip(
+                                    message: "Avancer",
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    textStyle: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14.0,
+                                    ),
+                                    preferBelow: true, 
+                                    verticalOffset: 20,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.arrow_forward_ios_rounded,
+                                          color: colorIN,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+
+                                const SizedBox(width: 10.0,),
+                                
+                                // ListView(
+                                //   children: [
+                                //     Padding(
+                                //       padding: const EdgeInsets.all(20.0), 
+                                //       child: TextField(
+                                //         decoration: InputDecoration(
+                                //           contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
+                                //           border: OutlineInputBorder(
+                                //             borderRadius: BorderRadius.circular(30.0),
+                                //             borderSide: const BorderSide(width: 0.8),
+                                //           ),
+                                //           hintText: 'Recherche',
+                                //           prefixIcon: const Icon(
+                                //             Icons.search_rounded,
+                                //             size: 30.0,
+                                //           ), 
+                                //           suffixIcon: IconButton(
+                                //             icon: Icon(Icons.clear),
+                                //             onPressed: () {
+
+                                //             },
+                                //           ),
+                                //         ),
+                                //       ),
+                                //     ),
+                                //   ],
+                                // ),
+                                
+                              ],
+                            ),
+                            Container(),
+                        ],
+                      ),
+                    ),
+                  ),
                   Expanded(
                     flex: 14,
                     child: Container(
