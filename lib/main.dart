@@ -40,11 +40,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Color colorIP = Colors.white60;
   Color colorIR = Colors.white60;
   Color colorIN = Colors.white60;
+  Color colorTI = Colors.white60;
 
   bool isHovered = false;
   bool isHovered1 = false;
   bool isHovered2 = false;
   bool isHovered3 = false;
+  bool isHovered4 = false;
+  bool isHovered5 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -475,7 +478,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.black54,
                   width: 0.5,
                 ),
-                color: Colors.black38,
+                color: Colors.black,
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Column(
@@ -483,6 +486,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Expanded(
                     flex: 1,
                     child: Container(
+                      padding: const EdgeInsets.only(left: 15.0, top: 5.0, right: 15.0, bottom: 5.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -566,39 +570,90 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ),
 
-                                const SizedBox(width: 10.0,),
+                                const SizedBox(width: 20.0,),
                                 
-                                // ListView(
-                                //   children: [
-                                //     Padding(
-                                //       padding: const EdgeInsets.all(20.0), 
-                                //       child: TextField(
-                                //         decoration: InputDecoration(
-                                //           contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
-                                //           border: OutlineInputBorder(
-                                //             borderRadius: BorderRadius.circular(30.0),
-                                //             borderSide: const BorderSide(width: 0.8),
-                                //           ),
-                                //           hintText: 'Recherche',
-                                //           prefixIcon: const Icon(
-                                //             Icons.search_rounded,
-                                //             size: 30.0,
-                                //           ), 
-                                //           suffixIcon: IconButton(
-                                //             icon: Icon(Icons.clear),
-                                //             onPressed: () {
-
-                                //             },
-                                //           ),
-                                //         ),
-                                //       ),
-                                //     ),
-                                //   ],
-                                // ),
-                                
+                                const Text(
+                                  "Search...",
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                               ],
                             ),
-                            Container(),
+                            Container(
+                              child: Row(
+                                children: [
+                                  MouseRegion(
+                                    onEnter: (_) {
+                                      setState(() {
+                                        isHovered4 = true;
+
+                                      });
+                                    },
+                                    onExit: (_) {
+                                      setState(() {
+                                        isHovered4 = false;
+                                      });
+                                    },       
+                                                
+                                    cursor: SystemMouseCursors.click,
+                                    child: Transform.scale(
+                                      scale: isHovered4 ? 1.1 : 1.0,
+                                      child: InkWell(
+                                        onTap: () {
+                                          print("Inscription");
+                                        },
+                                        child: Text(
+                                          "Inscription",
+                                          style: TextStyle(
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.w800,
+                                            color: isHovered4 ? Colors.white : Colors.white60,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+
+                                  const SizedBox(width: 15.0),
+
+                                  MouseRegion(
+                                    onEnter: (_) {
+                                      setState(() {
+                                        isHovered5 = true;
+                                      });
+                                    },
+                                    onExit: (_) {
+                                      setState(() {
+                                        isHovered5 = false;
+                                      });
+                                    },                   
+                                    cursor: SystemMouseCursors.click,
+                                    
+                                    child: Transform.scale(
+                                      scale: isHovered5 ? 1.1 : 1.0,
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          print("Connexion");
+                                        },
+                                        style: ButtonStyle(
+                                          backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        ),
+                                        child: const Text(
+                                          "Connexion",
+                                          style: TextStyle(
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.black54,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                         ],
                       ),
                     ),
